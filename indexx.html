@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>IELTS Prep</title>
+<style>
+  :root {
+    --ink: #14181F;
+    --paper: #FFFFFF;
+    --paper-2: #F7F8FA;
+    --band: #205C4B;
+    --band-soft: #EAF3EF;
+    --accent: #B14A28;
+    --line: #E7E7E4;
+    color-scheme: light;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Iowan Old Style', 'Georgia', serif;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 28px 20px 40px;
+  }
+
+  header {
+    margin-bottom: 28px;
+  }
+
+  .kicker {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    color: var(--band);
+    margin: 0 0 6px;
+    font-weight: 600;
+  }
+
+  h1 {
+    font-size: 32px;
+    line-height: 1.15;
+    margin: 0 0 10px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+
+  .sub {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #6B7280;
+    margin: 0;
+    max-width: 38ch;
+  }
+
+  .band-strip {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 22px 0 0;
+    padding: 16px 18px;
+    background: var(--band-soft);
+    border: 1px solid #DCEAE3;
+    border-radius: 10px;
+  }
+
+  .band-strip .num {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--band);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  .band-strip .label {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 13px;
+    color: #4B5A52;
+    line-height: 1.4;
+  }
+
+  .sections {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 16px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--paper);
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: border-color 0.15s ease, transform 0.1s ease;
+  }
+
+  .card:active {
+    background: var(--paper-2);
+    transform: scale(0.99);
+  }
+
+  .card .mark {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #B4AF9C;
+    width: 22px;
+    flex-shrink: 0;
+  }
+
+  .card .body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .card .title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 3px;
+    color: var(--ink);
+  }
+
+  .card .desc {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 13px;
+    color: #767D89;
+    margin: 0;
+  }
+
+  .card .go {
+    font-size: 20px;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  footer {
+    margin-top: 26px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 12px;
+    color: #B4AF9C;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <p class="kicker">Shaxsiy o'quv rejang</p>
+      <h1>Bugun nimadan boshlaymiz?</h1>
+      <p class="sub">Har kuni ozgina mashq — IELTS bandini asta-sekin oshirib boradi.</p>
+      <div class="band-strip">
+        <span class="num" id="bandScore">—</span>
+        <span class="label">taxminiy joriy band<br>hali mashq boshlanmagan</span>
+      </div>
+    </header>
+
+    <div class="sections">
+      <button class="card" data-section="vocab">
+        <span class="mark">01</span>
+        <span class="body">
+          <p class="title">So'z boyligi</p>
+          <p class="desc">Mavzular bo'yicha so'zlar, kunlik takrorlash</p>
+        </span>
+        <span class="go">›</span>
+      </button>
+
+      <button class="card" data-section="grammar">
+        <span class="mark">02</span>
+        <span class="body">
+          <p class="title">Grammatika</p>
+          <p class="desc">Tez-tez uchraydigan xatolar ustida ishlash</p>
+        </span>
+        <span class="go">›</span>
+      </button>
+
+      <button class="card" data-section="listening">
+        <span class="mark">03</span>
+        <span class="body">
+          <p class="title">Listening</p>
+          <p class="desc">Qisqa audio va IELTS formatidagi savollar</p>
+        </span>
+        <span class="go">›</span>
+      </button>
+
+      <button class="card" data-section="speaking">
+        <span class="mark">04</span>
+        <span class="body">
+          <p class="title">Speaking</p>
+          <p class="desc">Ovozli javob ber, darhol tahlil ol</p>
+        </span>
+        <span class="go">›</span>
+      </button>
+
+      <button class="card" data-section="writing">
+        <span class="mark">05</span>
+        <span class="body">
+          <p class="title">Writing</p>
+          <p class="desc">Task 1 va Task 2 uchun baholash</p>
+        </span>
+        <span class="go">›</span>
+      </button>
+    </div>
+
+    <footer>IELTS Prep · shaxsiy mashq bo'limi</footer>
+  </div>
+
+<script>
+  const tg = window.Telegram?.WebApp;
+  if (tg) {
+    tg.ready();
+    tg.expand();
+  }
+
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', () => {
+      const section = card.dataset.section;
+      // Hozircha bo'limlar tayyor emas - keyingi bosqichda qo'shiladi
+      if (tg?.showAlert) {
+        tg.showAlert(`"${card.querySelector('.title').textContent}" bo'limi tez orada qo'shiladi.`);
+      } else {
+        alert(`${section} bo'limi tez orada qo'shiladi.`);
+      }
+    });
+  });
+</script>
+</body>
+</html>
